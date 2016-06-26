@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+
+<body>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+  <title>Les commandes du terminal linux</title>
+  <h1>La commande Find</h1>
+</head>
+
+
+<div class="wrap">
+<span class="decor"></span>
+
+<nav>
+
+  <ul class="primary">
+    <li>
+      <a href="https://jibigit.github.io/index/">Index</a>
+      
+    </li>
+    <li>
+      <a href="https://jibigit.github.io/cat/">Afficher</a>
+      <ul class="sub">
+        <li><a href="https://jibigit.github.io/cat/">cat</a></li>
+        
+        <li><a href="https://jibigit.github.io/less/">less</a></li>
+        <li><a href="https://jibigit.github.io/tail/">tail</a></li>
+        <li><a href="https://jibigit.github.io/head/">head</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="">Manipuler</a>
+      <ul class="sub">
+        <li><a href="https://jibigit.github.io/cp/">Copier</a></li>
+        <li><a href="https://jibigit.github.io/mv/">Deplacer</a></li>
+        
+        <li><a href="https://jibigit.github.io/rm/">Supprimer</a></li>
+      </ul>  
+    </li>
+    <li>
+      <a href="">Creation</a>
+      <ul class="sub">
+        <li><a href="https://jibigit.github.io/touch/">Fichiers</a></li>
+        <li><a href="https://jibigit.github.io/mkdir/">Dossiers</a></li>
+        
+      </ul>  
+    </li>
+    <li>
+      <a href="">Rechercher</a>
+      <ul class="sub">
+        <li><a href="https://jibigit.github.io/find/">Find</a></li>
+        <li><a href="https://jibigit.github.io/grep/">Grep</a></li>
+        <li><a href="https://jibigit.github.io/pwd/">pwd</a></li>
+        <li><a href="https://jibigit.github.io/man/">man</a></li>
+        <li><a href="https://jibigit.github.io/ls/">ls</a></li>
+        
+      
+      </ul>  
+    </li>
+  </ul>
+</nav>
+</div>
+
+<!--close nav div-->
+
+
+<div id="find" >
+    <a name="find"></a>
+    <h2>find</h2>
+    <h4>La commande <strong><i>find</i></strong> permet de chercher des fichiers et éventuellement d'exécuter des commandes dessus.</h4>
+    <dl>
+      <dt>Quelques options :</dt>
+      <dd><i>-name</i>: Recherche d'un fichier par son nom</dd>
+      <dd><i>-iname</i>: Même chose que -name mais insensible à la casse</dd>
+      <dd><i>-type</i>: Recherche de fichier d'un certain type</dd>
+      <dd><i>-atime</i>: Recherche par date de dernier accès</dd>
+      <dd><i>-mtime</i>: Recherche par date de dernière modification</dd>
+      <dd><i>-user</i>: Recherche de fichiers appartenant à l'utilisateur donné</dd>
+      <dd><i>-group</i>: Recherche de fichiers appartenant au groupe donné</dd>
+      <dd><i>-size</i>: Recherche par rapport à une taille de fichier.</dd>
+      <dd><i>-exec</i>: Exécute la commande donnée aux fichiers trouvés.</dd >
+      <dd><i>-a</i>: Opérateur ET</dd>
+      <dd><i>-o</i>: Opérateur OU</dd>
+      <dd><i>!</i> ou <i>-not</i>: Opérateur NOT</dd>
+    </dl>
+    <p><code>find myfile* -print</code></p>
+    <p> Rechercher un fichier commençant par "myfile"</p>
+    <p><code>find -name *myfile*.txt -print</code></p>
+    <p> Rechercher un fichier contenant "myfile" et ayant pour extention ".txt"</p>
+    <p><code>find /usr -type d -print</code></p>
+    <p> Afficher tous les répertoires de /usr</p>
+    <p><code>find $HOME \( -name '*.txt' -o -name '*.pdf' \)</code></p>
+    <p> Afficher tous les fichiers .txt ou .pdf dans le répertoire home de l'utilisateur.</p>
+    <p><code>find $HOME -name *.txt -atime +7 -exec rm {} \;</code></p>
+    <p> Supprimer tous les fichiers .txt qui n'ont pas été consultés depuis plus de 7 jours dans le répertoire home de l'utilisateur.</p>
+    <p><code>find $HOME -name '*.txt' -size +4k -exec ls -l {} \;</code></p>
+    <p> Afficher la taille de tous les fichiers de plus de 4 kilos</p>
+  </div>
+
+  </body>
+
+  </html>
